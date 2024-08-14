@@ -10,7 +10,7 @@ export default function Form({
   const [buyRate, setBuyRate] = useState("");
   const [sellRate, setSellRate] = useState("");
   const [quantity, setQuatity] = useState("");
-  const [includeDp, setIncludeDp] = useState("Yes");
+  const [includeDp, setIncludeDp] = useState("yes");
   const [tax, setTax] = useState(0.075);
 
   function handleForm(e) {
@@ -22,13 +22,13 @@ export default function Form({
 
     const sellObj = selectedOption === "sell" && {
       sellRate,
-      includeDp,
       tax,
     };
 
     const newObj = {
       buyRate,
       quantity,
+      includeDp,
       ...sellObj,
     };
 
@@ -60,11 +60,20 @@ export default function Form({
         }}
       />
 
+      <label>Include DP Charge</label>
+      <select
+        onChange={(e) => {
+          setIncludeDp(e.target.value);
+        }}
+      >
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
       {selectedOption === "sell" && (
         <SellDetail
           sellRate={sellRate}
           setSellRate={setSellRate}
-          setIncludeDp={setIncludeDp}
           setTax={setTax}
         />
       )}

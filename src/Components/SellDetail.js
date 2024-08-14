@@ -1,7 +1,7 @@
 export default function SellDetail({
   sellRate,
   setSellRate,
-  setIncludeDp,
+
   setTax,
 }) {
   return (
@@ -16,16 +16,6 @@ export default function SellDetail({
             (/^[0-9]*$/.test(value) && setSellRate(Number(e.target.value)));
         }}
       />
-
-      <label>Include DP Charge</label>
-      <select
-        onChange={(e) => {
-          setIncludeDp(e.target.value);
-        }}
-      >
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
 
       <label>Capital Gain Tax</label>
       <select
