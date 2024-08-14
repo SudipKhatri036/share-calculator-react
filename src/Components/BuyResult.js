@@ -23,7 +23,7 @@ export default function BuyResult({
       </div>
 
       <div className="flex">
-        <h2>Total "Purchase" Amount</h2>
+        <h2>Total Purchase Amount</h2>
         <p>NPR. {totalBuyPrice}</p>
       </div>
 
