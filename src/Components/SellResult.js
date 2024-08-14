@@ -6,15 +6,17 @@ export default function SellResult({
   onBrokerCommision,
 }) {
   const sellSebonCommision = (totalSellPrice * 0.00015).toFixed(2);
-  const sellBrokerCommision =
-    totalSellPrice * onBrokerCommision(totalSellPrice);
+  const sellBrokerCommision = (
+    totalSellPrice * onBrokerCommision(totalSellPrice)
+  ).toFixed(2);
 
   let totalReceivableAmt = totalSellPrice - dpFee - sellSebonCommision;
 
   let profitorloss = totalReceivableAmt - totalBuyPrice;
 
   const isProfit = profitorloss > 0;
-  const taxAmt = profitorloss > 0 ? profitorloss * allDetails?.tax : 0;
+  const taxAmt =
+    profitorloss > 0 ? (profitorloss * allDetails?.tax).toFixed(2) : 0;
 
   totalReceivableAmt -= taxAmt;
   profitorloss -= taxAmt;

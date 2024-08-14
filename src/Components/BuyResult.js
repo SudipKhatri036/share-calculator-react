@@ -4,12 +4,12 @@ export default function BuyResult({
   dpFee,
   onBrokerCommision,
 }) {
-  const buySebonCommision = totalBuyPrice * 0.00015;
+  const buySebonCommision = (totalBuyPrice * 0.00015).toFixed(2);
 
   const buyBrokerCommision = totalBuyPrice * onBrokerCommision(totalBuyPrice);
   console.log(typeof buyBrokerCommision);
   const totalBrokerPrice =
-    totalBuyPrice + dpFee + buySebonCommision + buyBrokerCommision;
+    totalBuyPrice + dpFee + Number(buySebonCommision) + buyBrokerCommision;
   return (
     <>
       <div className="flex">

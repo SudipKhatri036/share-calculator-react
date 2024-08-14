@@ -4,6 +4,7 @@ export default function Form({
   selectedOption,
   onCalculationDetail,
   onShowResult,
+  onSubmitted,
 }) {
   const [buyRate, setBuyRate] = useState("");
   const [sellRate, setSellRate] = useState("");
@@ -31,23 +32,33 @@ export default function Form({
     };
 
     onCalculationDetail(newObj);
+    onSubmitted();
     onShowResult();
   }
   return (
     <form onSubmit={handleForm}>
       <label>Buy Rate</label>
       <input
-        type="number"
+        type="text"
         value={buyRate}
-        onChange={(e) => setBuyRate(Number(e.target.value))}
+        onChange={(e) => {
+          const value = e.target.value;
+          value === " " ||
+            (/^[0-9]*$/.test(value) && setBuyRate(Number(e.target.value)));
+        }}
       />
 
       <label>Stock quantity</label>
       <input
-        type="number"
+        type="text"
         value={quantity}
-        onChange={(e) => setQuatity(Number(e.target.value))}
+        onChange={(e) => {
+          const value = e.target.value;
+          value === "" ||
+            (/^[0-9]*$/.test(value) && setQuatity(Number(e.target.value)));
+        }}
       />
+
       {selectedOption === "sell" && (
         <SellDetail
           sellRate={sellRate}
@@ -77,9 +88,13 @@ function SellDetail({ sellRate, setSellRate, setIncludeDp, setTax }) {
     <>
       <label>Sell Rate</label>
       <input
-        type="number"
+        type="text"
         value={sellRate}
-        onChange={(e) => setSellRate(Number(e.target.value))}
+        onChange={(e) => {
+          const value = e.target.value;
+          value === "" ||
+            (/^[0-9]*$/.test(value) && setSellRate(Number(e.target.value)));
+        }}
       />
 
       <label>Include DP Charge</label>

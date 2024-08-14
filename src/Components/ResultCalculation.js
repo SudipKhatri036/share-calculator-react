@@ -1,7 +1,11 @@
 import SellResult from "./SellResult";
 import BuyResult from "./BuyResult";
 
-export default function ResultCalculation({ allDetails, selectedOption }) {
+export default function ResultCalculation({
+  allDetails,
+  selectedOption,
+  resultRef,
+}) {
   function handleBrokerCommision(price) {
     return price < 2500
       ? 10
@@ -20,7 +24,7 @@ export default function ResultCalculation({ allDetails, selectedOption }) {
   const dpFee = 25;
 
   return (
-    <div className="result">
+    <div className="result" ref={resultRef} style={{ marginTop: "20px" }}>
       {isSell ? (
         <SellResult
           allDetails={allDetails}
