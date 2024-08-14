@@ -1,13 +1,117 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  padding: 1rem 4rem;
+
+  color: white;
+}
+
+form {
+  line-height: 3rem;
+}
+
+h1 {
+  color: green;
+}
+
+label {
+  margin-inline: 2rem;
+  font-size: 1.2rem;
+}
+
+input,
+select {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+.buy-sell-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: left;
+}
+.buy-sell-container input[type="radio"] {
+  margin: 4px 0 0 4px;
+  line-height: normal;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.label-check {
+  margin-inline: 0rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+.btn-container {
+  text-align: right;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+}
+
+.buy {
+  background-color: rgb(207, 7, 7);
+}
+
+.sell {
+  background-color: rgb(3, 105, 3);
+}
+
+.sell:hover {
+  background-color: green;
+}
+
+.buy:hover {
+  background-color: red;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid gray;
+}
+
+.profit-loss {
+  width: 20%;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.profit-loss.profit {
+  background-color: green;
+}
+
+.profit-loss.loss {
+  background-color: red;
 }
