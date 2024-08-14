@@ -21,7 +21,7 @@ export default function ResultCalculation({
   const isSell = selectedOption === "sell";
   const totalBuyPrice = allDetails?.quantity * allDetails?.buyRate;
   const totalSellPrice = allDetails?.sellRate * allDetails?.quantity || "";
-  const dpFee = 25;
+  const dpFee = allDetails?.includeDp === "yes" ? 25 : 0;
 
   return (
     <div className="result" ref={resultRef} style={{ marginTop: "20px" }}>
