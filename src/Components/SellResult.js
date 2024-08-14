@@ -19,6 +19,7 @@ export default function SellResult({
     profitorloss > 0 ? (profitorloss * allDetails?.tax).toFixed(2) : 0;
 
   totalReceivableAmt -= taxAmt;
+  totalReceivableAmt = totalReceivableAmt.toFixed(2);
   profitorloss -= taxAmt;
 
   return (
